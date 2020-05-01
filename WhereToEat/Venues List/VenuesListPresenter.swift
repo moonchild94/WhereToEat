@@ -23,7 +23,7 @@ protocol VenuesListRenderer: AnyObject {
 
 class VenuesListPresenter: Presenter {
     private let coordinateProvider: CoordinateProvider
-    private let venueService: VenueService
+    private let venueService: VenueNetworkService
     private let favoriteVenueRepository: FavoriteVenueRepository
     
     weak var renderer: VenuesListRenderer?
@@ -34,7 +34,7 @@ class VenuesListPresenter: Presenter {
     private var favorites: [FavoriteVenue]?
     
     init(coordinateProvider: CoordinateProvider,
-         venueService: VenueService,
+         venueService: VenueNetworkService,
          favoriteVenueRepository: FavoriteVenueRepository) {
         self.coordinateProvider = coordinateProvider
         self.venueService = venueService
@@ -59,10 +59,10 @@ class VenuesListPresenter: Presenter {
     private func buildProps(for venues: [Venue]?, with error: Error?) -> VenuesListProps {
         return VenuesListProps(venues: venues,
                            error: error,
-                           onReload: onReload,
-                           onFavorite: onFavorite(for:),
-                           onAppear: onAppear,
-                           onDisappear: onDisappear)
+                           onReload: { [weak self] in self?.onReload() },
+                           onFavorite: { [weak self] in self?.onFavorite(for: $0) },
+                           onAppear: { [weak self] in self?.onAppear() },
+                           onDisappear: { [weak self] in self?.onDisappear() })
     }
     
     private func load(for coordinate: Coordinate) {

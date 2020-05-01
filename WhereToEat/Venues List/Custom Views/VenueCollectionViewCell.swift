@@ -47,11 +47,6 @@ class VenueCollectionViewCell: UITableViewCell {
         clean()
     }
     
-    func clean() {
-        venueView.iconImageView.kf.cancelDownloadTask()
-        venueView.iconImageView.image = nil
-    }
-    
     func configure(venue: Venue, onFavoriteAction: @escaping () -> Void) {
         favorite = venue.favorite
         
@@ -62,6 +57,11 @@ class VenueCollectionViewCell: UITableViewCell {
         setupFavorite(venue.favorite)
         
         self.onFavoriteAction = onFavoriteAction
+    }
+    
+    private func clean() {
+        venueView.iconImageView.kf.cancelDownloadTask()
+        venueView.iconImageView.image = nil
     }
     
     private func setupIcon(with url: String) {

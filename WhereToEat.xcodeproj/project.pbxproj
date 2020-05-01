@@ -13,7 +13,7 @@
 		1C5D8DB5245827C1004C83FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C5D8DB3245827C1004C83FB /* LaunchScreen.storyboard */; };
 		1C5D8DBD24582815004C83FB /* MockCoordinateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D8DBC24582815004C83FB /* MockCoordinateProvider.swift */; };
 		1C5D8DBF245841C2004C83FB /* VenueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D8DBE245841C2004C83FB /* VenueView.swift */; };
-		1C5D8DC224584972004C83FB /* VenueService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D8DC124584972004C83FB /* VenueService.swift */; };
+		1C5D8DC224584972004C83FB /* VenueNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D8DC124584972004C83FB /* VenueNetworkService.swift */; };
 		1C5D8DC4245849C2004C83FB /* VenueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D8DC3245849C2004C83FB /* VenueResponse.swift */; };
 		1C5D8DC7245860D2004C83FB /* VenueCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D8DC6245860D2004C83FB /* VenueCollectionViewCell.swift */; };
 		1C5D8DCA2458751E004C83FB /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D8DC82458751E004C83FB /* Model.xcdatamodeld */; };
@@ -41,7 +41,7 @@
 		1C5D8DB6245827C1004C83FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C5D8DBC24582815004C83FB /* MockCoordinateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoordinateProvider.swift; sourceTree = "<group>"; };
 		1C5D8DBE245841C2004C83FB /* VenueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueView.swift; sourceTree = "<group>"; };
-		1C5D8DC124584972004C83FB /* VenueService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueService.swift; sourceTree = "<group>"; };
+		1C5D8DC124584972004C83FB /* VenueNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueNetworkService.swift; sourceTree = "<group>"; };
 		1C5D8DC3245849C2004C83FB /* VenueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueResponse.swift; sourceTree = "<group>"; };
 		1C5D8DC6245860D2004C83FB /* VenueCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenueCollectionViewCell.swift; sourceTree = "<group>"; };
 		1C5D8DC92458751E004C83FB /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 			children = (
 				1C5D8DD52459ED10004C83FB /* NetworkService.swift */,
 				1C5D8DC3245849C2004C83FB /* VenueResponse.swift */,
-				1C5D8DC124584972004C83FB /* VenueService.swift */,
+				1C5D8DC124584972004C83FB /* VenueNetworkService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -316,7 +316,7 @@
 				1C5D8DD62459ED10004C83FB /* NetworkService.swift in Sources */,
 				1C5D8DD02459727E004C83FB /* CGExtensions.swift in Sources */,
 				1C5D8DCA2458751E004C83FB /* Model.xcdatamodeld in Sources */,
-				1C5D8DC224584972004C83FB /* VenueService.swift in Sources */,
+				1C5D8DC224584972004C83FB /* VenueNetworkService.swift in Sources */,
 				1C5D8DD42459E4BA004C83FB /* FavoriteVenue.swift in Sources */,
 				1C5D8DCD245877EB004C83FB /* FavoriteVenueRepository.swift in Sources */,
 				1C5D8DBD24582815004C83FB /* MockCoordinateProvider.swift in Sources */,

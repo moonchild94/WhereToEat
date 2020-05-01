@@ -61,7 +61,6 @@ class VenuesListViewController: UIViewController {
     
     private func setupTableView() {
         tableView.dataSource = self
-        tableView.delegate = self
         tableView.register(VenueCollectionViewCell.self, forCellReuseIdentifier: Constants.venueReuseIdentifier)
         tableView.separatorInset = tableViewSeparatorInset
         tableView.estimatedRowHeight = 80
@@ -121,14 +120,6 @@ extension VenuesListViewController: UITableViewDataSource {
         }
         
         return cell
-    }
-}
-
-extension VenuesListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if let cell = cell as? VenueCollectionViewCell {
-            cell.clean()
-        }
     }
 }
 

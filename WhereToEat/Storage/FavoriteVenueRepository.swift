@@ -16,11 +16,12 @@ protocol FavoriteVenueRepositoryDelegate: AnyObject {
 class FavoriteVenueRepository {
     private let persistentContainer: NSPersistentContainer
     
+    // Let it be for now
     private var mainContext: NSManagedObjectContext {
         assert(Thread.isMainThread)
-        return persistentContainer.viewContext // now it looks ok
+        return persistentContainer.viewContext
     }
-    
+        
     weak var delegate: FavoriteVenueRepositoryDelegate? {
         didSet {
             NotificationCenter.default.removeObserver(self)
@@ -66,7 +67,7 @@ class FavoriteVenueRepository {
             guard mainContext.hasChanges else { return }
             try mainContext.save()
         } catch let error as NSError {
-            NSLog("Could not save main context. Error: \(error.localizedDescription), \(error.userInfo)")
+            NSLog("Could not save context. Error: \(error.localizedDescription), \(error.userInfo)")
         }
     }
     

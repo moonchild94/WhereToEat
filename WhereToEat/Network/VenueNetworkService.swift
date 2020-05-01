@@ -1,5 +1,5 @@
 //
-//  VenueService.swift
+//  VenueNetworkService.swift
 //  WhereToEat
 //
 //  Created by Daria Kalmykova on 29.04.2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class VenueService: NetworkService {
+class VenueNetworkService: NetworkService {
     func getVenues(for coordinate: Coordinate, completion: @escaping ([VenueDto]?, Error?) -> Void) {
         let params: [String: Any] = ["lat": coordinate.latitude, "lon": coordinate.longitude]
         executeQuery(with: params) { (response: VenueResponse?, error: Error?) in

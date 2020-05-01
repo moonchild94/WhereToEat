@@ -45,7 +45,7 @@ class Coordinator {
     }()
     
     private lazy var presenter: VenuesListPresenter = {
-        let venueService = VenueService(baseUrl: Constants.apiUrl)
+        let venueService = VenueNetworkService(baseUrl: Constants.apiUrl)
         let favoriteVenueRepository = FavoriteVenueRepository(persistentContainer: persistentContainer)
         
         return VenuesListPresenter(coordinateProvider: coordinateProvider,
