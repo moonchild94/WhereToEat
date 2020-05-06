@@ -67,7 +67,9 @@ class VenueCollectionViewCell: UITableViewCell {
     private func setupIcon(with url: String) {
         venueView.iconImageView.kf.indicatorType = .activity
         
-        let options: KingfisherOptionsInfo = [.scaleFactor(UIScreen.main.scale), .transition(.flipFromTop(1))]
+        let options: KingfisherOptionsInfo = [.scaleFactor(UIScreen.main.scale),
+                                              .transition(.flipFromTop(1)),
+                                              .processor(DownsamplingImageProcessor(size: venueView.iconImageView.frame.size))]
         venueView.iconImageView.kf.setImage(with: URL(string: url), options: options) { result in
             switch result {
             case .success:

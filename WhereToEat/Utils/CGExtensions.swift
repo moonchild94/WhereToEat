@@ -20,6 +20,14 @@ extension CGRect {
                   height: size.height)
     }
     
+    init(size: CGSize) {
+        self.init(origin: CGPoint(), size: size)
+    }
+    
+    init(width: CGFloat, height: CGFloat) {
+        self.init(x: 0, y: 0, width: width, height: height)
+    }
+    
     func centered(with size: CGSize) -> CGRect {
         return CGRect(center: center, size: size)
     }

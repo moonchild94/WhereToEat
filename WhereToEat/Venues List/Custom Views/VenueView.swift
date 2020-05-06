@@ -30,7 +30,7 @@ class VenueView: UIView {
     }
         
     lazy var iconImageView: UIImageView = {
-        let view = UIImageView()
+        let view = UIImageView(frame: CGRect(width: Constants.iconSide, height: Constants.iconSide))
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
         view.layer.cornerRadius = 8

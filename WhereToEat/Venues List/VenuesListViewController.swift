@@ -9,6 +9,7 @@
 import UIKit
 import DeepDiff
 import NotificationBannerSwift
+import Kingfisher
 
 class VenuesListViewController: UIViewController {
     private enum Constants {
@@ -22,6 +23,8 @@ class VenuesListViewController: UIViewController {
     @IBOutlet private weak var errorView: UIStackView!
     
     @IBOutlet private weak var errorReloadButton: UIButton!
+    
+    private var imagePrefetcher: ImagePrefetcher?
     
     private var tableViewSeparatorInset: UIEdgeInsets {
         let leftInset = traitCollection.preferredContentSizeCategory.isAccessibilityCategory ? 16 : 84
@@ -65,6 +68,7 @@ class VenuesListViewController: UIViewController {
         tableView.separatorInset = tableViewSeparatorInset
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.prefetchDataSource = self
         tableView.tableFooterView = UIView()
     }
     
@@ -95,6 +99,20 @@ class VenuesListViewController: UIViewController {
         guard NotificationBannerQueue.default.numberOfBanners <= 1 else { return }
         let banner = StatusBarNotificationBanner(title: message, style: .danger)
         banner.show(on: self)
+    }
+}
+
+extension VenuesListViewController: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        guard let venues = props?.venues else { return }
+        let urls = indexPaths.compactMap { URL(string: venues[$0.row].imageUrl) }
+        imagePrefetcher = ImagePrefetcher(urls: urls)
+        imagePrefetcher?.start()
+    }
+    
+    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
+        imagePrefetcher?.stop()
+        imagePrefetcher = nil
     }
 }
 
