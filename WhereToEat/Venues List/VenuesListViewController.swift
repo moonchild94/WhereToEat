@@ -64,11 +64,9 @@ class VenuesListViewController: UIViewController {
     
     private func setupTableView() {
         tableView.dataSource = self
+        tableView.prefetchDataSource = self
         tableView.register(VenueCollectionViewCell.self, forCellReuseIdentifier: Constants.venueReuseIdentifier)
         tableView.separatorInset = tableViewSeparatorInset
-        tableView.estimatedRowHeight = 80
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.prefetchDataSource = self
         tableView.tableFooterView = UIView()
     }
     
@@ -132,9 +130,9 @@ extension VenuesListViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let venue = venues[indexPath.row]
-        cell.configure(venue: venue) { [weak self] in
-            self?.props?.onFavorite(venue)
+        cell.configure(venue: venues[indexPath.row]) { [weak self] in
+            guard let self = self, let venues = self.props?.venues, indexPath.row < venues.count else { return }
+            self.props?.onFavorite(venues[indexPath.row])
         }
         
         return cell

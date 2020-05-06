@@ -86,7 +86,7 @@ class VenueCollectionViewCell: UITableViewCell {
     }
     
     @objc private func onFavorite() {
-        favorite = !favorite
+        favorite.toggle()
         
         if let imageView = venueView.favoriteButton.imageView {
             UIView.transition(with: imageView,
