@@ -30,7 +30,7 @@ class Coordinator {
     
     private let coordinateProvider: CoordinateProvider = MockCoordinateProvider(coordinates: Constants.coordinates,
                                                                                 userDefaults: UserDefaults.standard,
-                                                                                period: 10)
+                                                                                period: 1000)
     
     private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: Constants.dbName)

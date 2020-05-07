@@ -12,7 +12,6 @@ class VenueView: UIView {
     private enum Constants {
         static let iconSide: CGFloat = 60
         static let favoriteSide: CGFloat = 36
-        static let outerInset: CGFloat = 16
         static let inset: CGFloat = 8
     }
     
@@ -73,7 +72,7 @@ class VenueView: UIView {
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
         let textAreaWidth = size.width
-            - Constants.outerInset * 2
+            - layoutMargins.width
             - Constants.inset * 2
             - iconSide
             - Constants.favoriteSide
@@ -81,16 +80,16 @@ class VenueView: UIView {
         let textAreaSize = size.with(width: textAreaWidth)
         let textAreaFittedHeight = titleLabel.sizeThatFits(textAreaSize).height
             + descriptionLabel.sizeThatFits(textAreaSize).height
-            + Constants.inset * 2
+            + layoutMargins.height
             + textInset
 
-        return size.with(height: max(Constants.inset * 2 + iconSide, textAreaFittedHeight))
+        return size.with(height: max(layoutMargins.height + iconSide, textAreaFittedHeight))
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let rect = self.bounds.insetBy(dx: Constants.outerInset, dy: Constants.inset)
+        let rect = self.bounds.inset(by: layoutMargins)
         
         let (iconArea, restArea) = rect.divided(atDistance: iconSide, from: .minXEdge)
         let (favoriteButtonFrame, textArea) = restArea.divided(atDistance: Constants.favoriteSide, from: .maxXEdge)

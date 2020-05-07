@@ -39,7 +39,14 @@ class VenueCollectionViewCell: UITableViewCell {
     }
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
-        return venueView.sizeThatFits(size)
+        return venueView.sizeThatFits(contentView.sizeThatFits(size))
+    }
+    
+    override func layoutMarginsDidChange() {
+        super.layoutMarginsDidChange()
+        
+        // For some reasons preservesSuperviewLayoutMargins doesn't work well :(
+        venueView.layoutMargins = contentView.layoutMargins
     }
     
     override func prepareForReuse() {

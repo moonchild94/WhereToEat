@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C2BE37D2463D4EB0096726F /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C2BE37C2463D4EB0096726F /* UIExtensions.swift */; };
 		1C5D8DA9245827BB004C83FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D8DA8245827BB004C83FB /* AppDelegate.swift */; };
 		1C5D8DAD245827BB004C83FB /* VenuesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5D8DAC245827BB004C83FB /* VenuesListViewController.swift */; };
 		1C5D8DB2245827C1004C83FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C5D8DB1245827C1004C83FB /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C2BE37C2463D4EB0096726F /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
 		1C5D8DA5245827BB004C83FB /* WhereToEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhereToEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C5D8DA8245827BB004C83FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C5D8DAC245827BB004C83FB /* VenuesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesListViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			children = (
 				1C5D8DCF2459727E004C83FB /* CGExtensions.swift */,
 				1C5D8DDF245A0923004C83FB /* Resources.swift */,
+				1C2BE37C2463D4EB0096726F /* UIExtensions.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				1C5D8DE9245AAB5F004C83FB /* Presenter.swift in Sources */,
 				1C5D8DAD245827BB004C83FB /* VenuesListViewController.swift in Sources */,
 				1C5D8DDB245A032B004C83FB /* Venue.swift in Sources */,
+				1C2BE37D2463D4EB0096726F /* UIExtensions.swift in Sources */,
 				1C5D8DBF245841C2004C83FB /* VenueView.swift in Sources */,
 				1C5D8DC7245860D2004C83FB /* VenueCollectionViewCell.swift in Sources */,
 				1C5D8DA9245827BB004C83FB /* AppDelegate.swift in Sources */,
